@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , shrink-to-fit="no">
+
+    <!-- Index.js -->
+    <script language="JavaScript" type="text/javascript" src="index.js"></script>
+
+    <!-- Api de Cadastro de Clientes -->
+    <script language="JavaScript" type="text/javascript" src="cadastrarCliente.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="titulo">Cadastro De Clientes</h1>
+        <p id="subtitulo">Preencha seus dados</p>
+        <br>
+    </div>
+
+    <form>
+        <fieldset class="form-control">
+            <div>
+                <label for="cpf"><strong>Cpf: </strong></label>
+                <input type="text" name="cpf" id="cpf" placeholder="Ex: xxx.xxx.xxx-xx" required>
+            </div>
+            <div class="form-group">
+                <label for="nome"><strong>Nome: </strong></label>
+                <input type="text" name="nome" id="nome" placeholder="Ex: José Da Silva" required>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="email"><strong>Email: </strong></label>
+            <input type="text" name="email" id="email" placeholder="Ex: jose_silva@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone"><strong>Telefone: </strong></label>
+            <input type="text" name="telefone" id="telefone" placeholder="Ex: (11) 0000 - 0000" required>
+        </div>
+
+        <div class="form-group">
+            <label for="logradouro"><strong>Logradouro: </strong></label>
+            <input type="text" name="logradouro" id="logradouro"
+                placeholder="Ex: Rua Clímaco Barbosa, Avenida Paulista etc." required>
+        </div>
+
+        <div class="form-group">
+            <label for="numero"><strong>Número: </strong></label>
+            <input type="text" name="numero_endereco" id="numero_endereco" placeholder="Ex: 114" required>
+        </div>
+
+        <div class="form-group">
+            <label for="complemento"><strong>Complemento: </strong></label>
+            <input type="text" name="complemento" id="complemento" placeholder="Ex: Casa, Apartamento etc." required>
+        </div>
+
+        <div class="form-group">
+            <label for="bairro"><strong>Bairro: </strong></label>
+            <input type="combobox" name="bairro" id="bairro" placeholder="Ex: Cambuci, Jardim Paulista etc." required>
+        </div>
+        <div>
+
+            <label for="estado"><strong>Estado: </strong></label>
+            <select id="estado1" value="AL"></select>
+
+            <label for="cidade"><strong>Cidade: </strong></label>
+            <select id="cidade1" value="Maceió"></select>
+
+            <script language="JavaScript" type="text/javascript" charset="utf-8">
+                new dgCidadesEstados({
+                    estado: document.getElementById("estado1"),
+                    cidade: document.getElementById("cidade1")
+                });
+            </script>
+
+        </div>
+        <div id="tipo-endereco">
+            <label><strong>Qual o tipo de endereço informado?</strong></label><br><br>
+            <label for="tipoendereco1">
+                <input type="radio" name="tipoendereco" value="faturamento" checked>Faturamento
+            </label>
+            <label for="tipoendereco2">
+                <input type="radio" name="tipoendereco" value="entrega">Entrega
+            </label>
+            <label for="tipoendereco3">
+                <input type="radio" name="tipoendereco" value="comercial">Comercial
+            </label>
+            <label for="tipoendereco4">
+                <input type="radio" name="tipoendereco" value="residencial">Residencial
+            </label>
+        </div>
+
+        <!-- Botão para enviar o formulário -->
+        <button class="botao" type="submit" onsubmit="" onclick="cadastrarCliente()">Concluído</button>
+
+    </form>
+</body>
+
+</html>
